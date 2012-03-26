@@ -152,7 +152,7 @@ a:hover {
 }
 .row {
   /* margin-left: -20px; */
-  margin-top: 20px;
+  /* margin-top: 20px; */
   *zoom: 1;
 }
 .row:before, .row:after {
@@ -183,6 +183,7 @@ a:hover {
 }
 .span6 {
   width: 460px;
+  color: #999;
 }
 .span7 {
   width: 540px;
