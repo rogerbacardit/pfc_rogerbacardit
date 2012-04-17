@@ -191,7 +191,7 @@
             <div class="thumbnails">
               <div class="page-header">
                   <h1>Renders i animacions
-                    <small>Videos renderitzats per mostra tan el proces com el resultat final</small>
+                    <small>Videos renderitzats per mostrar tant el procés com el resultat final</small>
                   </h1>
               </div>
             </div>
@@ -199,16 +199,16 @@
                 <ul class="thumbnails">
 
                   <li class="span4">
-                      <a class="fancyImg" href="http://player.vimeo.com/video/21603201"><img src="http://f.cl.ly/items/1D402s1G0C3S1A0M3x2g/movie01.png"/></a>
+                      <a class="fancyVideo" href="http://vimeo.com/21603201"><img src="http://f.cl.ly/items/1D402s1G0C3S1A0M3x2g/movie01.png"/></a>
                   </li>
 
 
                   <li class="span4">
-                  <a class="fancyImg" href="http://player.vimeo.com/video/19965727"><img src="http://f.cl.ly/items/391D2J000g0j0w3M1s0b/movie02.png"/></a>
+                  <a class="fancyVideo" href="http://vimeo.com/19965727"><img src="http://f.cl.ly/items/391D2J000g0j0w3M1s0b/movie02.png"/></a>
                   </li>
 
                   <li class="span4">
-                      <a class="fancyImg" href="http://player.vimeo.com/video/38925479"><img src="http://f.cl.ly/items/2c452q3i2b402n2i0Y2e/movie03.png"/></a>
+                      <a class="fancyVideo" href="http://vimeo.com/38925479"><img src="http://f.cl.ly/items/2c452q3i2b402n2i0Y2e/movie03.png"/></a>
                   </li>
 
                 </ul>
@@ -254,15 +254,22 @@
     <script type="text/javascript">
       $(document).ready(function() {
           $(".fancyImg").fancybox();
-          }
-    // for iframe
-        $(".iframe").fancyImg
+          $(".fancyVideo").click(function() {
+            $.fancybox({
+              'padding'		: 0,
+              'autoScale'		: true,
+              'transitionIn'	: 'none',
+              'transitionOut'	: 'none',
+              'title'			: this.title,
+              'width'			: 640,
+              'height'		: 360,
+              'href'			: this.href.replace(new RegExp("([0-9])","i"),'moogaloop.swf?clip_id=$1'),
+              'type'			: 'swf'
+              });
+
+            return false;
+            });
       });
-
-
-
     </script>
-
-
   </body>
 </html>
